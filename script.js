@@ -47,7 +47,7 @@ cityInput.addEventListener('input', async (e) => {
 async function fetchCitySuggestions(query) {
     try {
         const response = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`
+            `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`
         );
         return await response.json();
     } catch (error) {
