@@ -18,6 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 body::before {
     content: "";
@@ -44,7 +45,7 @@ body::before {
 @media (max-width: 480px) {
     .main-container {
         width: 350px;
-        height: 550px;
+        min-height: 550px;
     }
 }
 
@@ -226,4 +227,20 @@ body::before {
 .section-message img {
     height: 180px;
     width: fit-content;
+}
+
+.footer-section {
+    z-index: 10;
+    margin-top: 70px;
+}
+
+.footer-section img {
+    height: 14px;
+    width: auto;
+    padding: 0 5px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: black;
 }

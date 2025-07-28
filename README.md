@@ -8,7 +8,7 @@ Note: This is **my very first time dealing with APIs**, and I created this proje
 
 ## 🔍 Preview
 
-[Home Screenshot](./assets/readme/preview.png)
+![Home Screenshot](./assets/readme/preview.png)
 
 ---
 
