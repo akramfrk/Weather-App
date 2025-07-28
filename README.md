@@ -6,35 +6,42 @@ Note: This is **my very first time dealing with APIs**, and I created this proje
 
 ---
 
-## Preview
+## 🔍 Preview
+
 [Home Screenshot](./assets/readme/preview.png)
 
-## FEATURES
+---
 
-- Search weather information by city name
+## 🌦️ FEATURES
+
+- 🔎 **Search weather information by city name**
     
-- Display current weather data including:
+- ✨ **Search suggestions while typing**  
+    As you start typing a city name, the app suggests matching cities using the OpenWeather Geo API:  
+    `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`
+    
+- 📊 **Display current weather data including**:
     
     - Temperature (°C)
         
     - Weather condition (e.g., Clear, Rainy)
         
-    - Wind speed (km/h)
+    - Wind speed (M/s)
         
     - Humidity (%)
         
-- Shows 5-day weather forecast at 12:00 PM each day
+- 📅 **5-day forecast** at 12:00 PM for each day
     
-- Handles invalid or empty input with a "Not Found" error section
+- 🚫 Handles invalid or empty input with a "City Not Found" error section
     
-- Clean and modern **glassmorphism** user interface
+- 💎 **Glassmorphism user interface** for a clean and modern look
     
-- Fully responsive layout for both desktop and mobile devices
+- 📱 **Fully responsive** layout for desktop and mobile devices
     
 
 ---
 
-## TECHNOLOGIES USED
+## 🧰 TECHNOLOGIES USED
 
 - HTML5
     
@@ -42,12 +49,12 @@ Note: This is **my very first time dealing with APIs**, and I created this proje
     
 - JavaScript (ES6+)
     
-- OpenWeatherMap API
+- OpenWeatherMap API (Weather + Geo)
     
 
 ---
 
-## HOW TO USE
+## 🚀 HOW TO USE
 
 1. Download or clone this project to your local machine.
     
@@ -57,67 +64,72 @@ Note: This is **my very first time dealing with APIs**, and I created this proje
     
     `const apiKey = 'YOUR_API_KEY_HERE';`
     
-4. Open the `index.html` file in your browser to use the app.
+4. Open the `index.html` file in your browser to launch the app.
     
-5. Type any city name and click the search button (or press Enter) to get the weather.
+5. Start typing a city name and choose a suggestion or press Enter to get the weather forecast.
     
 
 ---
 
-## FOLDER STRUCTURE
+## 📁 FOLDER STRUCTURE
 
 - `assets/`
     
     - `weather/` → Weather icons (SVG format)
-    - message/ → messages images (Serch & Not Found)
+        
+    - `message/` → Message illustrations (Search & Not Found)
+        
+- `script.js` → JavaScript logic: API fetch, DOM updates, and event handling
     
-- `script.js` → JavaScript logic: API fetch, DOM update, and event handling
-- `index.html` → Main HTML file of the application
-- `style.css` → All styles for layout, animations, and responsiveness
+- `index.html` → Main HTML file
     
-- `README.txt` → This instruction and documentation file
+- `style.css` → Styling, layout, and responsive behavior
     
-
----
-
-## WHAT I LEARNED
-
-- How to make an API request using the `fetch()` method
-    
-- How to read and extract useful data from JSON responses
-    
-- How to handle async behavior using `async/await`
-    
-- How to dynamically update the DOM with real data
-    
-- How to insert HTML using `.insertAdjacentHTML()`
-    
-- How to gracefully handle empty inputs or invalid responses
+- `README.txt` → This documentation file
     
 
 ---
 
-## POSSIBLE FUTURE IMPROVEMENTS
+## 🧠 WHAT I LEARNED
 
-- Add support for Fahrenheit/Celsius toggle
+- How to make API requests using `fetch()`
     
-- Show local time for the selected city
+- How to work with and parse JSON responses
     
-- Add loading animations during API requests
+- How to use `async/await` to handle asynchronous code
     
-- Use Geolocation API to detect the user’s current city
+- How to dynamically manipulate the DOM
     
-- Add theme switcher: light mode / dark mode
+- How to create HTML templates with `.insertAdjacentHTML()`
+    
+- How to implement user input validation and error handling
+    
+- How to use a second API (Geo API) to provide **autocomplete suggestions**
     
 
 ---
 
-## License
+## 🔮 POSSIBLE FUTURE IMPROVEMENTS
+
+- Add a toggle between Fahrenheit and Celsius
+    
+- Display local time of the selected city
+    
+- Show loading animations during API requests
+    
+- Use Geolocation API to automatically detect user’s current city
+    
+- Add light/dark mode toggle
+    
+
+---
+
+## 📜 License
 
 This project is open-source and free to use for learning or inspiration.
 
 ---
 
-## AUTHOR
+## 👨‍💻 AUTHOR
 
 FERKIOUI Akram

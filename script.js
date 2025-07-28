@@ -1,5 +1,6 @@
 const cityInput = document.querySelector('.city-input');
 const searchBtn = document.querySelector('.search-btn');
+const suggestionsContainer = document.querySelector('.suggestions-container');
 
 const apiKey = '12c2a4d4f50d89d9c509220bf8183ab0';
 
@@ -29,6 +30,59 @@ cityInput.addEventListener('keydown', (event) => {
         updateWeatherInfo(cityInput.value);
         cityInput.value = '';
         cityInput.blur();
+    }
+});
+
+cityInput.addEventListener('input', async (e) => {
+    const inputValue = e.target.value.trim();
+    
+    if (inputValue.length > 2) {
+        const suggestions = await fetchCitySuggestions(inputValue);
+        displaySuggestions(suggestions);
+    } else {
+        suggestionsContainer.style.display = 'none';
+    }
+});
+
+async function fetchCitySuggestions(query) {
+    try {
+        const response = await fetch(
+            `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`
+        );
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching suggestions:', error);
+        return [];
+    }
+};
+
+function displaySuggestions(suggestions) {
+    if (suggestions.length === 0) {
+        suggestionsContainer.style.display = 'none';
+        return;
+    }
+    
+    suggestionsContainer.innerHTML = '';
+    suggestions.forEach(suggestion => {
+        const suggestionItem = document.createElement('div');
+        suggestionItem.classList.add('suggestion-item');
+        suggestionItem.textContent = `${suggestion.name}`;
+        
+        suggestionItem.addEventListener('click', () => {
+            cityInput.value = `${suggestion.name}`;
+            suggestionsContainer.style.display = 'none';
+            updateWeatherInfo(`${suggestion.name}`);
+        });
+        
+        suggestionsContainer.appendChild(suggestionItem);
+    });
+    
+    suggestionsContainer.style.display = 'block';
+};
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.input-container')) {
+        suggestionsContainer.style.display = 'none';
     }
 });
 
